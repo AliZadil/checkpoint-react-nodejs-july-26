@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 interface Post {
-  id:number;
-  text:string;
+  id: number;
+  text: string;
 }
 
 function App() {
@@ -75,7 +75,13 @@ function App() {
       <button onClick={handleSort}>{ascending ? "Sort Decending" : "Sort Ascending"}</button>
       {posts.map((post: Post) => (
         <div key={post.id}>
-          <input value={post.text} onChange={(element) => setPosts(posts.map(p => p.id === post.id ? {...p, text: element.target.value } : p))} />
+          <input 
+            value={post.text} 
+            onChange={(element) => setPosts(posts.map(p => p.id === post.id ? {...p, text: element.target.value } : p))} 
+            style={{color: post.id ½ 2 === 0 ? "red" : "blue"}}
+          />
+          <button onClick={() => handleUpdatePost(post.id)} >Update</button>
+          <button onClick={() => handleDeletePost(post.id)} >Delete</button>
         </div>
       ))}
     </div>
