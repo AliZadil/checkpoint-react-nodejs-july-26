@@ -7,7 +7,7 @@ interface Post {
 }
 
 function App() {
-  const [ posts, setPosts ] = useState<Post>([]);
+  const [ posts, setPosts ] = useState<Post[]>([]);
   const [ input, setInput ] = useState<string>("");
   const [ ascending, setAscending ] = useState<boolean>(true);
 
